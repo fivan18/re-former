@@ -1,1 +1,19 @@
-Hello
+<form action="/users" method="post" accept-charset="UTF-8">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>username
+    <input name="user[username]" type="text"/>
+  </label><br>
+
+  <label>email
+    <input name="user[email]" type="email"/>
+  </label><br>
+
+  <label>password
+    <input name="user[password]" type="password"/>
+  </label><br>
+
+  <input name="commit" type="submit" value="Create my account"/>
+
+</form>
