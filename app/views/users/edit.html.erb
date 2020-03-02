@@ -1,11 +1,10 @@
 <%= form_for @user do |f| %>
   <%if @user.errors.full_messages.any?%>
-  <p>Please fix these errors before submiting the form</p>
-    <%@user.errors.full_messages.each do |m|%> 
+    <p>Please fix these errors before submiting the form</p>
+    <%@user.errors.full_messages.each do |m|%>
       <%= m%> <br>
     <%end%>
   <%end%>
-  
   <%= f.label :username, "username:" %>
   <%= f.text_field :username %>
   <%= f.label :email, "email:" %>
@@ -13,4 +12,4 @@
   <%= f.label :password, "password:" %>
   <%= f.password_field :password %>
   <%= f.submit %>
-  <% end %>
+<% end %>
