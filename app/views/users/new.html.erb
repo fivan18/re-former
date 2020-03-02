@@ -18,7 +18,18 @@
 
 </form> 
 
+
+ <%= form_tag('/users') do %>
+ <%= label_tag 'username'%>
+   <%= text_field_tag 'user[username]' %>
+   <%= label_tag 'email'%>
+   <%= email_field_tag 'user[email]' %>
+   <%= label_tag 'password'%>
+   <%= password_field_tag 'user[password]' %>
+   <%= submit_tag 'Create User' %>
+ <%end%>
 -->
+
 <%= form_for @user do |f| %>
   <%if @user.errors.full_messages.any?%>
     <p>Please fix these errors before submiting the form</p>
@@ -29,7 +40,7 @@
   <%= f.label :username, "username:" %>
   <%= f.text_field :username %>
   <%= f.label :email, "email:" %>
-  <%= f.text_field :email %>
+  <%= f.email_field :email %>
   <%= f.label :password, "password:" %>
   <%= f.password_field :password %>
   <%= f.submit %>
